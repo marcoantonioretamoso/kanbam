@@ -28,15 +28,15 @@ class MakeServiceInterfaceRepositoryAllCommand extends Command
         $name = $this->argument('name');
 
         $this->call('make:repository', [
-            'name_repository' => $name . 'Repository'
+            'name' => $name . 'Repository'
         ]);
 
         $this->call('make:service', [
-            'name_service' => $name . 'Service'
+            'name' => $name . 'Service'
         ]);
 
         $this->call('make:interface', [
-            'name_interface' => $name . 'Interface'
+            'name' => $name . 'Interface'
         ]);
     }
 }
