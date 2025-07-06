@@ -112,7 +112,7 @@
                             <!--begin::Toolbar wrapper-->
                             <div class="d-flex align-items-stretch flex-shrink-0">
 
-                                <div class="d-flex align-items-center ms-1 ms-lg-3" style="width: 200px !important;">
+                                {{-- <div class="d-flex align-items-center ms-1 ms-lg-3" style="width: 200px !important;">
                                     <select class="form-select form-select-sm" id="idcondominio_header" name="idcondominio_header"
                                     data-control="select2" data-placeholder="Seleccione una cuenta"
                                     style="width: 100% !important;">
@@ -121,7 +121,7 @@
                                             <option value="{{$item->id}}" id="option{{$item->id}}" {{ Auth::user()->selected_account == $item->id?"selected":"" }}>{{$item->nombre}}</option>
                                         @endforeach
                                     </select>
-                                </div>
+                                </div> --}}
 
                                 <!--begin::User menu-->
                                 <div class="d-flex align-items-center ms-1 ms-lg-3" id="kt_header_user_menu_toggle">

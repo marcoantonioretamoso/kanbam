@@ -165,7 +165,7 @@
                     </div>
                 </div> --}}
 
-                    <div class="menu-item">
+                    {{-- <div class="menu-item">
                         <a class="menu-link {{ Str::is(['admin/ingresos'], request()->path()) ? 'active' : '' }}"
                             href="">
                             <span class="menu-icon">
@@ -173,16 +173,16 @@
                             </span>
                             <span class="menu-title">Ingresos</span>
                         </a>
-                    </div>
+                    </div> --}}
                 {{-- @endcan
                 @can('listar egresos') --}}
                     <div class="menu-item">
-                        <a class="menu-link {{ Str::is(['admin/egresos'], request()->path()) ? 'active' : '' }}"
+                        <a href="{{route('board')}}" class="menu-link {{ Str::is(['admin/board'], request()->path()) ? 'active' : '' }}"
                             href="">
                             <span class="menu-icon">
                                 <i class="fas fa-hand-holding-usd"></i>
                             </span>
-                            <span class="menu-title">Egresos</span>
+                            <span class="menu-title">Tablero</span>
                         </a>
                     </div>
                 {{-- @endcan --}}

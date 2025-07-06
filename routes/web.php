@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\BoardController;
 
 Route::get('/', function () {
     if (Auth::check()) {
@@ -25,5 +26,8 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::middleware(['auth'])->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('index');
+        //board
+        Route::get('/board', [BoardController::class, 'index'])->name('board');
+        
     });
 });

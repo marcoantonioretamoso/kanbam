@@ -48,43 +48,43 @@
         }
     });
 
-    $('select[name="idcondominio_header"]').on('change', function() {
-        actualizarCondominioActual($(this).val());
-    });
+    // $('select[name="idcondominio_header"]').on('change', function() {
+    //     actualizarCondominioActual($(this).val());
+    // });
 
-    function actualizarCondominioActual(condominioSeleccionado) {
-        $.ajax({
-            type: "POST",
-            url: "{{ url('admin/actualizar/condominioactual') }}",
-            data: {
-                condominio_id: condominioSeleccionado,
-                _token: "{{ csrf_token() }}"
-            },
-            dataType: 'json',
-            success: function(response) {
-                //console.log(response);
-                if (response.Codigo == 0) {
+    // function actualizarCondominioActual(condominioSeleccionado) {
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "{{ url('admin/actualizar/condominioactual') }}",
+    //         data: {
+    //             condominio_id: condominioSeleccionado,
+    //             _token: "{{ csrf_token() }}"
+    //         },
+    //         dataType: 'json',
+    //         success: function(response) {
+    //             //console.log(response);
+    //             if (response.Codigo == 0) {
 
-                    window.location.href = window.location.href;
+    //                 window.location.href = window.location.href;
 
-                } else {
-                    toastr.error(response.mensaje, 'Ocurrio un error!');
-                    toastr.options.closeDuration = 10000;
-                    toastr.options.timeOut = 10000;
-                    toastr.options.extendedTimeOut = 10000;
-                }
-            },
-            error: function(xhr, ajaxOptions, thrownError) {
-                var errors = xhr.responseJSON.errors;
-                $.each(errors, function(key, value) {
-                    toastr.error(value[0], 'Datos invalidos!');
-                    toastr.options.closeDuration = 10000;
-                    toastr.options.timeOut = 10000;
-                    toastr.options.extendedTimeOut = 10000;
-                });
-            }
-        });
-    }
+    //             } else {
+    //                 toastr.error(response.mensaje, 'Ocurrio un error!');
+    //                 toastr.options.closeDuration = 10000;
+    //                 toastr.options.timeOut = 10000;
+    //                 toastr.options.extendedTimeOut = 10000;
+    //             }
+    //         },
+    //         error: function(xhr, ajaxOptions, thrownError) {
+    //             var errors = xhr.responseJSON.errors;
+    //             $.each(errors, function(key, value) {
+    //                 toastr.error(value[0], 'Datos invalidos!');
+    //                 toastr.options.closeDuration = 10000;
+    //                 toastr.options.timeOut = 10000;
+    //                 toastr.options.extendedTimeOut = 10000;
+    //             });
+    //         }
+    //     });
+    // }
 
     function mostrarLoading() {
         $('#loading').css('display', 'flex');
